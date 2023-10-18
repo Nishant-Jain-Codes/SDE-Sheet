@@ -35,7 +35,8 @@
 ---
 
 # Arrays (1/6)
-1. [73 Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
+1. [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
+2. [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/solutions/4181284/simple-solution-explanation/)
 # Arrays Part-II (0/6)
 
 # Arrays Part-III (0/6)
