@@ -34,8 +34,8 @@
 
 ---
 
-# Arrays (0/6)
-
+# Arrays (1/6)
+1. [73 Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
 # Arrays Part-II (0/6)
 
 # Arrays Part-III (0/6)
