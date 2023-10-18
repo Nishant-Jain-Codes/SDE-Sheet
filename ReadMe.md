@@ -37,6 +37,10 @@
 # Arrays (1/6)
 1. [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
 2. [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/solutions/4181284/simple-solution-explanation/)
+3. [31. Next Permutation]()
+4. [53. Maximum Subarray]()
+5. [75. Sort Colors]()
+6. [121. Best Time to Buy and Sell Stock]()
 # Arrays Part-II (0/6)
 
 # Arrays Part-III (0/6)
