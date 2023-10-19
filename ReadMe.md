@@ -1,6 +1,6 @@
 ## Index
 
-- [Arrays (0/6)](#arrays-06)
+- [Arrays (4/6)](#arrays-46)
 - [Arrays Part-II (0/6)](#arrays-part-ii-06)
 - [Arrays Part-III (0/6)](#arrays-part-iii-06)
 - [Arrays Part-IV (0/6)](#arrays-part-iv-06)
@@ -34,13 +34,14 @@
 
 ---
 
-# Arrays (1/6)
+# Arrays (4/6)
 1. [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
 2. [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/solutions/4181284/simple-solution-explanation/)
 3. [31. Next Permutation]()
-4. [53. Maximum Subarray]()
-5. [75. Sort Colors]()
+4. [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/solutions/4183897/o-n-kadane-s-algorithm-explanation/)
+5. [75. Sort Colors](https://leetcode.com/problems/sort-colors/solutions/4183886/2-pointer-explanation/)
 6. [121. Best Time to Buy and Sell Stock]()
+
 # Arrays Part-II (0/6)
 
 # Arrays Part-III (0/6)
