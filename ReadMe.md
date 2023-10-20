@@ -1,7 +1,7 @@
 ## Index
 
-- [Arrays (4/6)](#arrays-46)
-- [Arrays Part-II (0/6)](#arrays-part-ii-06)
+- [Arrays (5/6)](#arrays-56)
+- [Arrays Part-II (1/6)](#arrays-part-ii-16)
 - [Arrays Part-III (0/6)](#arrays-part-iii-06)
 - [Arrays Part-IV (0/6)](#arrays-part-iv-06)
 - [Linked List (0/6)](#linked-list-06)
@@ -34,15 +34,16 @@
 
 ---
 
-# Arrays (4/6)
+# Arrays (5/6)
 1. [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
 2. [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/solutions/4181284/simple-solution-explanation/)
 3. [31. Next Permutation]()
 4. [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/solutions/4183897/o-n-kadane-s-algorithm-explanation/)
 5. [75. Sort Colors](https://leetcode.com/problems/sort-colors/solutions/4183886/2-pointer-explanation/)
-6. [121. Best Time to Buy and Sell Stock]()
+6. [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solutions/4188659/simple-solution/)
 
-# Arrays Part-II (0/6)
+# Arrays Part-II (1/6)
+1. [48. Rotate Image](https://leetcode.com/problems/rotate-image/solutions/4188728/simple-explanation/)
 
 # Arrays Part-III (0/6)
 
