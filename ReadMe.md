@@ -1,7 +1,7 @@
 ## Index
 
 - [Arrays (5/6)](#arrays-56)
-- [Arrays Part-II (1/6)](#arrays-part-ii-16)
+- [Arrays Part-II (3/6)](#arrays-part-ii-36)
 - [Arrays Part-III (0/6)](#arrays-part-iii-06)
 - [Arrays Part-IV (0/6)](#arrays-part-iv-06)
 - [Linked List (0/6)](#linked-list-06)
@@ -42,8 +42,13 @@
 5. [75. Sort Colors](https://leetcode.com/problems/sort-colors/solutions/4183886/2-pointer-explanation/)
 6. [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solutions/4188659/simple-solution/)
 
-# Arrays Part-II (1/6)
+# Arrays Part-II (3/6)
 1. [48. Rotate Image](https://leetcode.com/problems/rotate-image/solutions/4188728/simple-explanation/)
+2. [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/solutions/4189074/simply-explanation/)
+3. [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/solutions/4188999/simple-explanation/)
+4. []()
+5. []()
+6. []()
 
 # Arrays Part-III (0/6)
 
