@@ -1,7 +1,6 @@
 ## Index
 
-- [Arrays (5/6)](#arrays-56)
-- [Arrays Part-II (3/6)](#arrays-part-ii-36)
+- [Arrays Part-I (5/6)](#arrays-part-i-56)
 - [Arrays Part-III (0/6)](#arrays-part-iii-06)
 - [Arrays Part-IV (0/6)](#arrays-part-iv-06)
 - [Linked List (0/6)](#linked-list-06)
@@ -34,21 +33,273 @@
 
 ---
 
-# Arrays (5/6)
-1. [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
-2. [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/solutions/4181284/simple-solution-explanation/)
-3. [31. Next Permutation]()
-4. [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/solutions/4183897/o-n-kadane-s-algorithm-explanation/)
-5. [75. Sort Colors](https://leetcode.com/problems/sort-colors/solutions/4183886/2-pointer-explanation/)
-6. [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solutions/4188659/simple-solution/)
+# Arrays Part-I (5/6)
 
-# Arrays Part-II (3/6)
+1. [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
+   ```c++
+   // approach -> use the first row and column as hash to store whether that row require to be zero or not 
+        class Solution {
+        public:
+            void setZeroes(vector<vector<int>>& matrix) {
+                bool setZerothRow0 = false;
+                bool setZerothCol0 = false;
+                int row=matrix.size();
+                int col=matrix[0].size();
+                for(int i=0;i<col;i++){
+                    if(matrix[0][i]==0)
+                        setZerothRow0=true;
+                }
+                for(int i=0;i<row;i++){
+                    if(matrix[i][0]==0)
+                        setZerothCol0=true;
+                }
+                for(int i=1;i<row;i++){
+                    for(int j=1;j<col;j++){
+                        if(matrix[i][j]==0){
+                            matrix[0][j]=0;
+                            matrix[i][0]=0;
+                        }
+                    }
+                }
+                for(int i=1;i<col;i++){
+                    if(matrix[0][i]==0){
+                        for(int j=1;j<row;j++){
+                            matrix[j][i]=0;
+                        }
+                    }
+                }
+                for(int i=1;i<row;i++){
+                    if(matrix[i][0]==0){
+                        for(int j=1;j<col;j++){
+                            matrix[i][j]=0;
+                        }
+                    }
+                }
+                if(setZerothRow0){
+                    for(int i=0;i<col;i++)
+                        matrix[0][i]=0;
+                }
+                if(setZerothCol0){
+                    for(int i=0;i<row;i++)
+                        matrix[i][0]=0;
+                }
+            }
+        };
+    ```
+2. [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/solutions/4181284/simple-solution-explanation/)
+   ```c++
+        class Solution {
+        public:
+            vector<vector<int>> generate(int numRows) {
+                vector<vector<int>> ans;
+                ans.push_back({1});
+                for(int i = 2;i<=numRows;i++){
+                    vector<int>curLevel;
+                    curLevel.push_back(1);
+                    if(i>2){
+                        for(int j=0;j<ans.back().size()-1;j++){
+                            curLevel.push_back(ans.back()[j]+ans.back()[j+1]);
+                        }
+                    }
+                    curLevel.push_back(1);
+                    ans.push_back(curLevel);
+                }
+                return ans;
+            }
+        };
+    ```
+3. [31. Next Permutation]()
+   ```python
+   ```
+4. [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/solutions/4183897/o-n-kadane-s-algorithm-explanation/)
+   ```c++
+        class Solution {
+        public:
+            int maxSubArray(vector<int>& nums) {
+                int maximal = nums[0];
+                int curSum = 0;
+                for (int i = 0; i < nums.size(); i++) {
+                    curSum += nums[i];
+                    maximal = max(maximal, curSum);
+                    if (curSum < 0)
+                        curSum = 0;
+                }
+                return maximal;
+            }
+        };
+   ```
+5. [75. Sort Colors](https://leetcode.com/problems/sort-colors/solutions/4183886/2-pointer-explanation/)
+   ```c++
+        // Two-pointer approach 
+        // O(N) time
+
+        class Solution {
+        public:
+            void sortColors(vector<int>& nums) {
+                int i = 0; // Pointer for 0s
+                int j = nums.size(); // Pointer for 2s
+                
+                for (int k = 0; k < nums.size(); k++) {
+                    if (nums[k] == 0) {
+                        i++;
+                    }
+                    if (nums[k] == 2) {
+                        j--;
+                    }
+                }
+                
+                int k = 0; // Initialize a new pointer for iterating through the array.
+
+                while (i) {
+                    nums[k] = 0;
+                    i--;
+                    k++;
+                }
+
+                while (k < j) {
+                    nums[k] = 1;
+                    k++;
+                }
+
+                while (k < nums.size()) {
+                    nums[k] = 2;
+                    k++;
+                }
+            }
+        };
+    ```
+6. [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solutions/4188659/simple-solution/)
+    ```c++
+        class Solution {
+        public:
+            int maxProfit(vector<int>& prices) {
+                if (prices.empty()) {
+                    return 0;
+                }
+
+                int curMin = prices[0];
+                int maxProfit = 0;
+
+                for (int i = 1; i < prices.size(); i++) {
+                    if (prices[i] < curMin) {
+                        curMin = prices[i];
+                    } else {
+                        maxProfit = max(maxProfit, prices[i] - curMin);
+                    }
+                }
+
+                return maxProfit;
+            }
+        };
+    ```
+
+# Arrays Part-II (5/6)
+
 1. [48. Rotate Image](https://leetcode.com/problems/rotate-image/solutions/4188728/simple-explanation/)
+    ```c++
+        class Solution {
+            public:
+                void rotate(vector<vector<int>>& matrix) {
+                    int n = matrix.size();
+
+                    // Transpose the matrix (swap rows with columns)
+                    for (int i = 0; i < n; i++) {
+                        for (int j = 0; j < i; j++) {
+                            swap(matrix[i][j], matrix[j][i]);
+                        }
+                    }
+
+                    // Reverse each row
+                    for (int i = 0; i < n; i++) {
+                        reverse(matrix[i].begin(), matrix[i].end());
+                    }
+                }
+        };
+    ```
 2. [56. Merge Intervals](https://leetcode.com/problems/merge-intervals/solutions/4189074/simply-explanation/)
+    ```python
+    class Solution:
+        def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+            if not intervals:
+                return []
+
+            intervals.sort(key=lambda x: x[0])
+            merged = [intervals[0]]
+
+            for i in range(1, len(intervals)):
+                current_interval = intervals[i]
+                previous_interval = merged[-1]
+
+                if current_interval[0] <= previous_interval[1]:
+                    previous_interval[1] = max(previous_interval[1], current_interval[1])
+                else:
+                    merged.append(current_interval)
+
+            return merged
+    ```
 3. [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/solutions/4188999/simple-explanation/)
-4. []()
-5. []()
-6. []()
+   ```python
+   class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        temp = []
+        i,j=0,0
+        while i<m and j<n:
+            if nums1[i]<nums2[j]:
+                temp.append(nums1[i])
+                i+=1
+            else:
+                temp.append(nums2[j])
+                j+=1
+        while i<m:
+            temp.append(nums1[i])
+            i+=1
+        while j<n:
+            temp.append(nums2[j])
+            j+=1
+        for i,x in enumerate(temp):
+            nums1[i]=x
+
+    ```
+4. [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/solutions/4197873/worst-medium-best-approach-explained/)
+   ```python
+   class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        slow, fast = 0, 0
+        # Find the loop
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+            if slow == fast:
+                break
+        slow = 0
+        # Find the start of the loop
+        while True:
+            slow = nums[slow]
+            fast = nums[fast]
+            if slow == fast:
+                return slow
+    ```
+5. [Missing and Repeating Number](https://www.codingninjas.com/studio/problems/873366?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0)
+    ```python
+    def missingAndRepeating(arr, n):
+    repeating = -1
+    for num in arr:
+        if arr[abs(num) - 1] < 0:
+            repeating = abs(num)
+        else:
+            arr[abs(num) - 1] = -arr[abs(num) - 1]
+
+    missing = -1
+    for i in range(n):
+        if arr[i] > 0:
+            missing = i + 1
+            break
+
+    print(missing, repeating)
+    ```
+6. [Count Inversions](https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1)
+   ```python
+   ```
 
 # Arrays Part-III (0/6)
 
