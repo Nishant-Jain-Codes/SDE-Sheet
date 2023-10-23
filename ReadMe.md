@@ -1,7 +1,7 @@
 ## Index
 
 - [Arrays Part-I (6/6)](#arrays-part-i-66)
-- [Arrays Part-III (0/6)](#arrays-part-iii-06)
+- [Arrays Part-III (1/6)](#arrays-part-iii-16)
 - [Arrays Part-IV (0/6)](#arrays-part-iv-06)
 - [Linked List (0/6)](#linked-list-06)
 - [Linked List Part-II (0/6)](#linked-list-part-ii-06)
@@ -377,7 +377,7 @@
         return mergeSort(temp, 0, n - 1)
    ```
 
-# Arrays Part-III (0/6)
+# Arrays Part-III (1/6)
 
 1. [74. Search a 2D Matrix]()
 2. [50. Pow(x, n)]()
