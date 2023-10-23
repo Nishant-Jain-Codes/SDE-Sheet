@@ -379,6 +379,46 @@
 
 # Arrays Part-III (0/6)
 
+1. [74. Search a 2D Matrix]()
+2. [50. Pow(x, n)]()
+3. [169. Majority Element]()
+4. [229. Majority Element II]()
+5. [62. Unique Paths](https://leetcode.com/problems/unique-paths/solutions/4198946/detailed-explanation/)
+   ```python
+        class Solution:
+            def uniquePaths(self, m: int, n: int) -> int:
+                # Initialize a 2D dynamic programming array with -1 values
+                dp = [[-1] * n for i in range(m)]
+
+                # Define a recursive function to calculate unique paths
+                def recursion(x, y):
+                    # Base case: If we reach the bottom-right corner, return 1 (one unique path)
+                    if x == m - 1 and y == n - 1:
+                        return 1
+                    # Base case: If we go out of bounds, return 0 (no valid paths)
+                    elif x > m - 1 or y > n - 1:
+                        return 0
+                    # Check if the value for the current cell has been computed
+                    if dp[x][y] != -1:
+                        return dp[x][y]
+
+                    # Recursive case: Calculate the number of unique paths by summing two possibilities
+                    # 1. Moving right: recursion(x+1, y)
+                    # 2. Moving down: recursion(x, y+1)
+                    right = recursion(x + 1, y)
+                    down = recursion(x, y + 1)
+
+                    # Update the value of dp[x][y] with the sum of the above two possibilities
+                    dp[x][y] = right + down
+
+                    return dp[x][y]
+
+                # Start the recursion from the top-left corner (0, 0)
+                return recursion(0, 0)
+
+        
+   ```
+6. [493. Reverse Pairs]()
 # Arrays Part-IV (0/6)
 
 # Linked List (0/6)
