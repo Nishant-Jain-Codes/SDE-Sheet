@@ -1,6 +1,6 @@
 ## Index
 
-- [Arrays Part-I (5/6)](#arrays-part-i-56)
+- [Arrays Part-I (6/6)](#arrays-part-i-66)
 - [Arrays Part-III (0/6)](#arrays-part-iii-06)
 - [Arrays Part-IV (0/6)](#arrays-part-iv-06)
 - [Linked List (0/6)](#linked-list-06)
@@ -33,7 +33,7 @@
 
 ---
 
-# Arrays Part-I (5/6)
+# Arrays Part-I (6/6)
 
 1. [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solutions/4181247/o-1-space-solution-explanation/)
    ```c++
@@ -108,8 +108,30 @@
             }
         };
     ```
-3. [31. Next Permutation]()
+3. [31. Next Permutation](https://leetcode.com/problems/next-permutation/solutions/4198541/simple-explanation/)
    ```python
+    class Solution:
+        def nextPermutation(self, nums: List[int]) -> None:
+            # Find the first element from the right that is smaller than the next element.
+            i = len(nums) - 2
+            while i >= 0 and nums[i] >= nums[i + 1]:
+                i -= 1
+
+            if i == -1:
+                # If no such element is found, the array is in descending order.
+                # In this case, reverse the entire array to get the smallest permutation.
+                nums[:] = nums[:][::-1]
+            else:
+                # Find the rightmost element greater than nums[i].
+                j = len(nums) - 1
+                while nums[j] <= nums[i]:
+                    j -= 1
+
+                # Swap nums[i] and nums[j].
+                nums[i], nums[j] = nums[j], nums[i]
+
+                # Reverse the subarray to the right of i to ensure the smallest permutation.
+                nums[i + 1:] = nums[i + 1:][::-1]
    ```
 4. [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/solutions/4183897/o-n-kadane-s-algorithm-explanation/)
    ```c++
@@ -193,7 +215,7 @@
         };
     ```
 
-# Arrays Part-II (5/6)
+# Arrays Part-II (6/6)
 
 1. [48. Rotate Image](https://leetcode.com/problems/rotate-image/solutions/4188728/simple-explanation/)
     ```c++
@@ -299,6 +321,60 @@
     ```
 6. [Count Inversions](https://practice.geeksforgeeks.org/problems/inversion-of-array-1587115620/1)
    ```python
+   class Solution:
+    # Function to count inversions in the array.
+    def inversionCount(self, Main_arr, n):
+        # Create a temporary array to store the sorted elements.
+        temp = Main_arr
+        
+        # Define a function to merge two sorted subarrays and count inversions.
+        def merge(arr, si, mid, ei):
+            l = si
+            r = mid + 1
+            temp = [0] * (ei - si + 1)  # Temporary array to store merged values.
+            k = 0  # Index for temporary array.
+            count = 0  # Variable to count inversions.
+
+            while l <= mid and r <= ei:
+                if arr[l] <= arr[r]:
+                    temp[k] = arr[l]
+                    k += 1
+                    l += 1
+                else:
+                    # If arr[l] > arr[r], it's at the wrong position, and the number
+                    # of elements it's wrongly positioned relative to is (mid - l + 1).
+                    count += (mid - l + 1)
+                    temp[k] = arr[r]
+                    k += 1
+                    r += 1
+
+            while l <= mid:
+                temp[k] = arr[l]
+                k += 1
+                l += 1
+            while r <= ei:
+                temp[k] = arr[r]
+                k += 1
+                r += 1
+
+            k = 0
+            for i in range(si, ei + 1):
+                arr[i] = temp[k]
+                k += 1
+            return count
+
+        # Define a function to perform merge sort and count inversions.
+        def mergeSort(arr, si, ei):
+            if si >= ei:
+                return 0
+            mid = (si + ei) >> 1
+            left = mergeSort(arr, si, mid)
+            right = mergeSort(arr, mid + 1, ei)
+            join = merge(arr, si, mid, ei)
+            return left + right + join
+
+        # Call the mergeSort function to count inversions and return the count.
+        return mergeSort(temp, 0, n - 1)
    ```
 
 # Arrays Part-III (0/6)
